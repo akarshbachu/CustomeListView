@@ -23,6 +23,12 @@ public class MainActivity extends AppCompatActivity {
        lv=(ListView)findViewById(R.id.listView);
         customeAdapter=new CustomeAdapter(getApplicationContext(),R.layout.row,myCustomeArray);
         lv.setAdapter(customeAdapter);
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(),"position:"+position,Toast.LENGTH_LONG).show();
+            }
+        });
 
     }
 }
